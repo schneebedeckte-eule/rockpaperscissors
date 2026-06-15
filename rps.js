@@ -1,5 +1,3 @@
-let computerChoice;
-let humanChoice;
 let computerScore = 0;
 let humanScore = 0;
 
@@ -13,13 +11,12 @@ let humanScore = 0;
 function getComputerChoice() {
   let randomNum = Math.random();
   if (randomNum <= 0.33) {
-    computerChoice = "Rock";
+    return "Rock";
   } else if (randomNum <= 0.66) {
-    computerChoice = "Paper";
+    return "Paper";
   } else {
-    computerChoice = "Scissors";
+    return "Scissors";
   }
-  return computerChoice;
 }
 
 // pseudocode step2: create a function that lets the human player input the options
@@ -31,15 +28,14 @@ function getHumanChoice() {
   let userInput = prompt("Please choose either Rock, Paper or Scissors.");
   let InputLower = userInput.toLowerCase();
   if (InputLower === "rock") {
-    humanChoice = "Rock";
+    return "Rock";
   } else if (InputLower === "paper") {
-    humanChoice = "Paper";
+    return "Paper";
   } else if (InputLower === "scissors") {
-    humanChoice = "Scissors";
+    return "Scissors";
   } else {
-    humanChoice = "You entered an invalid Option.";
+    return "You entered an invalid Option.";
   }
-  return humanChoice;
 }
 
 // pseudocode step 3: create a function so the game can be played
