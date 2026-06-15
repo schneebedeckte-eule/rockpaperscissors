@@ -2,6 +2,8 @@ console.log("hello");
 
 let computerChoice;
 let humanChoice;
+let computerScore = 0;
+let humanScore = 0;
 
 // pseudocode step 1: create a function that randomly returns either rock paper or scissors
 // create a random number between 0 and 1
@@ -41,3 +43,28 @@ function getHumanChoice() {
   }
   return humanChoice;
 }
+
+// pseudocode step 3: create a function so the game can be played
+// create a function that takes the results of the other two functions
+// write the logic on who wins and who loses depending on the chosen inputs
+// write a message via console log for either win or los
+// increase either human or computer score depending on who won
+
+function playRound(humanChoice, computerChoice) {
+  if (
+    (humanChoice === "Rock" && computerChoice === "Scissors") ||
+    (humanChoice === "Paper" && computerChoice === "Rock") ||
+    (humanChoice === "Scissors" && computerChoice === "Paper")
+  ) {
+    console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+    humanScore++;
+  } else if (humanChoice === computerChoice) {
+    console.log(`It's a Draw! Both Players chose the same Option.`);
+  } else {
+    console.log(`You lose! ${computerChoice} beats your ${humanChoice}!`);
+    computerScore++;
+  }
+}
+
+// let humanSelection = getHumanChoice();
+// let computerSelection = getComputerChoice();
