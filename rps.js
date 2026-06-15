@@ -1,5 +1,3 @@
-console.log("hello");
-
 let computerChoice;
 let humanChoice;
 let computerScore = 0;
@@ -31,12 +29,12 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let userInput = prompt("Please choose either Rock, Paper or Scissors.");
-  let userInputLowerCase = userInput.toLowerCase();
-  if (userInputLowerCase === "rock") {
+  let InputLower = userInput.toLowerCase();
+  if (InputLower === "rock") {
     humanChoice = "Rock";
-  } else if (userInputLowerCase === "paper") {
+  } else if (InputLower === "paper") {
     humanChoice = "Paper";
-  } else if (userInputLowerCase === "scissors") {
+  } else if (InputLower === "scissors") {
     humanChoice = "Scissors";
   } else {
     humanChoice = "You entered an invalid Option.";
@@ -45,9 +43,9 @@ function getHumanChoice() {
 }
 
 // pseudocode step 3: create a function so the game can be played
-// create a function that takes the results of the other two functions
-// write the logic on who wins and who loses depending on the chosen inputs
-// write a message via console log for either win or los
+// create a function that takes the results of the other two functions and compares them
+// write the logic on who wins and who loses
+// write a message via console log for either win or loss
 // increase either human or computer score depending on who won
 
 function playRound(humanChoice, computerChoice) {
@@ -59,12 +57,39 @@ function playRound(humanChoice, computerChoice) {
     console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
     humanScore++;
   } else if (humanChoice === computerChoice) {
-    console.log(`It's a Draw! Both Players chose the same Option.`);
+    console.log(`It's a Draw! Both Players chose ${humanChoice}.`);
   } else {
     console.log(`You lose! ${computerChoice} beats your ${humanChoice}!`);
     computerScore++;
   }
 }
 
-// let humanSelection = getHumanChoice();
-// let computerSelection = getComputerChoice();
+// pseudocode step 4: create a loop so you can play multiple rounds in a row
+// create a loop and let it loop until 5 rounds have been played
+// log every time it loops with a message
+// call the function playRound with every loop
+// track and compare the final result and give out win or lose message
+
+function playGame(rounds) {
+  for (let i = 1; i <= rounds; i++) {
+    console.log("Round " + i);
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+  }
+}
+
+playGame(5);
+let result;
+if (humanScore > computerScore) {
+  result = "You are the Winner!";
+} else if (humanScore < computerScore) {
+  result = "Aww you lost to the Computer!";
+} else {
+  result = "It's a Tie!";
+}
+
+console.log(
+  `You won ${humanScore} time(s) and the Computer won ${computerScore} time(s). ${result}`,
+);
