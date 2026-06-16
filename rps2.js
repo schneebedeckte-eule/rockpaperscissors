@@ -59,7 +59,7 @@ let result;
 if (humanScore > comScore) {
   result = `You won! You scored ${humanScore} time(s) while the Computer only scored ${comScore} time(s).`;
 } else if (humanScore < comScore) {
-  result = `Awww you lost! You only scored ${humanScore} time(s) while the Computer scored ${comScore} time(s).`;
+  result = `Oh no! You lost! You only scored ${humanScore} time(s) while the Computer scored ${comScore} time(s).`;
 } else {
   result = `It's a Tie! You both scored ${humanScore} time(s)`;
 }
