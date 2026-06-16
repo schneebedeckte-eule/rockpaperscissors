@@ -27,3 +27,22 @@ function getHumanChoice() {
     return "You entered an invalid Choice.";
   }
 }
+
+function playRound(humanChoice, comChoice) {
+  if (
+    (humanChoice === "Rock" && comChoice === "Scissors") ||
+    (humanChoice === "Paper" && comChoice === "Rock") ||
+    (humanChoice === "Scissors" && comChoice === "Paper")
+  ) {
+    console.log(`You won! ${humanChoice} beats ${comChoice}'`);
+    humanScore++;
+  } else if (humanChoice === comChoice) {
+    console.log(`Oh it's a Draw! You both chose ${humanChoice}'`);
+  } else {
+    console.log(`Aww you lose! ${comChoice} beats ${humanChoice}.`);
+    comScore++;
+  }
+}
+
+let humanSelection = getHumanChoice();
+let comSelection = getComChoice();
