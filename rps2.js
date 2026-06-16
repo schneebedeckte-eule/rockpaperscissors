@@ -44,5 +44,24 @@ function playRound(humanChoice, comChoice) {
   }
 }
 
-let humanSelection = getHumanChoice();
-let comSelection = getComChoice();
+function playGame(rounds) {
+  for (let i = 1; i <= rounds; i++) {
+    console.log("Round " + i);
+    const humanSelection = getHumanChoice();
+    const comSelection = getComChoice();
+
+    playRound(humanSelection, comSelection);
+  }
+}
+
+playGame(5);
+let result;
+if (humanScore > comScore) {
+  result = `You won! You scored ${humanScore} time(s) while the Computer only scored ${comScore} time(s).`;
+} else if (humanScore < comScore) {
+  result = `Awww you lost! You only scored ${humanScore} time(s) while the Computer scored ${comScore} time(s).`;
+} else {
+  result = `It's a Tie! You both scored ${humanScore} time(s)`;
+}
+
+console.log(result);
