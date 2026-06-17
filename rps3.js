@@ -43,3 +43,25 @@ function playRound(humanChoice, comChoice) {
     comScore++;
   }
 }
+
+function playGame(rounds) {
+  for (let i = 1; i <= rounds; i++) {
+    console.log("Round " + i);
+    const humanSelection = getHumanChoice();
+    const comSelection = getComChoice();
+
+    playRound(humanSelection, comSelection);
+  }
+}
+
+playGame(5);
+let result;
+if (humanScore > comScore) {
+  result = "You are the Winner!";
+} else if (comScore < humanScore) {
+  result = "Oh you lost!";
+} else {
+  result = "It's a Tie!";
+}
+
+console.log("Game Over! " + result + ` ${humanScore} to ${comScore}`);
