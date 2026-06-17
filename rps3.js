@@ -27,3 +27,19 @@ function getHumanChoice() {
     return "Invalid Input.";
   }
 }
+
+function playRound(humanChoice, comChoice) {
+  if (
+    (humanChoice === "Rock" && comChoice === "Scissors") ||
+    (humanChoice === "Paper" && comChoice === "Rock") ||
+    (humanChoice === "Scissors" && comChoice === "Paper")
+  ) {
+    console.log(`You win! ${humanChoice} beats ${comChoice}.`);
+    humanScore++;
+  } else if (humanChoice === comChoice) {
+    console.log(`Oh it's a Draw! You both chose ${humanChoice}.`);
+  } else {
+    console.log(`Oh no! You lost, ${comChoice} beats ${humanChoice}.`);
+    comScore++;
+  }
+}
