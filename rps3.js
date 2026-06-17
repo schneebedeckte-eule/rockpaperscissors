@@ -13,3 +13,17 @@ function getComChoice() {
     return "Scissors";
   }
 }
+
+function getHumanChoice() {
+  let userInput = prompt("Rock, Paper or Scissors?");
+  let userLower = userInput.toLowerCase();
+  if (userLower === "rock") {
+    return "Rock";
+  } else if ((userLower = "paper")) {
+    return "Paper";
+  } else if (userLower === "scissors") {
+    return "Scissors";
+  } else {
+    return "Invalid Input.";
+  }
+}
