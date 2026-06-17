@@ -65,3 +65,6 @@ if (humanScore > comScore) {
 }
 
 console.log("Game Over! " + result + ` ${humanScore} to ${comScore}`);
+
+// took three tries in the end, was worth it though. feels more familiar.
+// good progress, happy with that, hopefully no more rock paper scissor soon
